@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Fibonacci (Recursion)</title>
+
+
+	<script type="text/javascript">
+	
+	function fib(x){
+
+		var sum = 0;      // initialize sum
+
+		if(x <= 2){
+			console.log(1);
+		}
+		else{
+			sum += fib(x-2) + fib(x-1);
+		}
+
+		console.log(sum);
+		
+	}
+
+	// invoke generateChange
+	fib(6);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

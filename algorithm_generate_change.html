@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Generate Change</title>
+
+
+	<script type="text/javascript">
+	
+	function generateChange(x){
+
+		// initialize variables
+		var dollar = 0;
+		var quarter = 0;
+		var dime = 0;
+		var nickel = 0;
+		var pennies = 0;
+
+		// check to see if x is 0 or less, return false if true
+		if (x <= 0){
+			console.log('Cannot compute 0 or less');
+		}
+
+		if(x >= 100){
+			dollar = Math.floor(x / 100); // dollar = 
+			console.log(dollar + ' dollars');
+			x = x - (dollar * 100);
+		}
+		if(x >= 25){
+			quarter = Math.floor(x / 25);
+			console.log(quarter + ' quarter');
+			x = x - (quarter * 25);
+		}
+		if(x >= 10){
+			dime = Math.floor(x / 10);
+			console.log(dime + ' dime');
+			x = x - (dime * 10);
+		}
+		if(x >= 5){
+			nickel = Math.floor(x / 5);
+			console.log(nickel + ' nickel');
+			x = x - (nickel * 5);
+		}
+		if(x >= 1){
+			pennies = Math.floor(x / 1);
+			console.log(pennies + ' pennies');
+		}
+	}
+
+	// invoke generateChange
+	generateChange(0);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

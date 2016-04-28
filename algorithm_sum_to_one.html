@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Sum To One</title>
+
+
+	<script type="text/javascript">
+	
+	function sumToOne(x){
+		// initialize variable sum to 0
+		var sum = 0;
+
+		// while x is more then 0
+		while(x > 0){
+			// get the remainder of x and add to variable sum
+			sum += x%10;			
+
+			// take x and divide by 10
+			x = Math.floor(x/10);	
+		}
+
+		// if the sum is greater or equal to 10, execute recursion, pass the sum
+		if(sum >= 10){
+			sumToOne(sum);
+		}
+
+		// print out the final sum
+		console.log('the final number is: ' + sum);
+	}
+
+
+	// invoke generateChange
+	sumToOne(928); 
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Fibonacci (non-recurse)</title>
+
+
+	<script type="text/javascript">
+	
+	function fib(x){
+
+		var sum = 0;      // initialize sum
+		var index_a = 0;  // we know whats in index 0
+		var index_b = 1;  // we know whats in index 1
+
+		// if x == 0
+		if(x == 0){
+			console.log(0);
+		}
+
+		// if x == 1
+		if(x == 1){
+			console.log(1);
+		}
+
+		// Lets take care of negative numbers
+		if(x < 0){
+			console.log('Please enter a positive number');
+		}
+
+		// Start looping at index 2
+		// (index 0 and 1 has been taken care of above)
+		for(var i = 2; i<=x; i++){
+			sum = index_a + index_b;
+			index_a = index_b;
+			index_b = sum;
+		}
+
+		console.log(sum);
+		
+	}
+
+	// invoke generateChange
+	fib(4);
+	fib(5);
+	fib(6);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

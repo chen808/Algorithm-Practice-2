@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Push Front</title>
+
+
+	<script type="text/javascript">
+	
+	function pushFront(arr, x){
+
+		if(arr.length <= 0){
+			return false;
+		}
+
+		arr.push(x);
+
+		for(var i=arr.length-1; i>=0; i--){
+			var temp = arr[i];
+			arr[i] = arr[i-1];
+			arr[i-1] = temp
+		}
+		console.log(arr);
+
+	}
+
+	// invoke generateChange
+	var arr = [1,5,7];
+	var x = 3;
+
+	pushFront(arr, x);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Messy Num</title>
+
+
+	<script type="text/javascript">
+	
+	function messyNum(x){
+
+		// initialize sum
+		var sum = 0;
+
+		// check to see if x is 0 or less, return false if true
+		if (x <= 0){
+			console.log('Cannot compute 0 or less');
+		}
+
+		// while number is greater then 0 
+		while(x > 0){
+			// if x mod 7 equals 0, then include it twice, add it to sum
+			if(x%7 == 0){
+				sum = sum + (x*2);
+			}
+			// if x mod 3 equals 0, 'skip' 
+			else if(x%3 == 0){
+				sum += 0;
+			}
+			// other wise, just add x to sum
+			else{
+				sum+=x;
+			}
+			// decrement x
+			x--;
+		}
+		// print out the final 'sum'
+		console.log('this is the sum: ' + sum);
+	}
+
+	// invoke 'messyNum'
+	messyNum(8);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
