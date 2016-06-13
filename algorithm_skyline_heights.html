@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Skyline Heights</title>
+
+
+	<script type="text/javascript">
+	
+	function skyline(arr){
+		// check to see if incoming
+		// array isn't empty
+		if(arr.length <= 0){
+			console.log("Array is empty");
+		}
+
+		// initialize variable maxNum to compare high number
+		var maxNum = 0;
+
+		// creating new array to store new numbers
+		var newArr = [];
+
+		for(var i=0; i<=arr.length-1; i++){
+			if(arr[i] > maxNum){
+				maxNum = arr[i];
+				newArr.push(arr[i]);
+			}
+		}
+
+		// print out the new array
+		console.log(newArr);
+
+	}
+
+	// invoke reverseArr
+	var arr = [-1, 7, 3, 10, 2, 15];
+	skyline(arr);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
