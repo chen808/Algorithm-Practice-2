@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Rotate Array</title>
+
+
+	<script type="text/javascript">
+	
+		function rotateArr(arr, shiftby){
+			// check to see if incoming array or shiftby isn't empty
+			if(arr.length <= 0 || shiftby <= 0){
+				console.log("Array and/or Shiftby is empty");
+			}
+
+			// initializing x to start the count
+			var x = 0;
+
+			// while loop takes care of how many times this for loop runs
+			// according to 'shiftby' number
+			while(x < shiftby){
+				// start at end of for loop
+				for(var i=arr.length-1; i>0; i--){
+					var temp = arr[i];
+					arr[i] = arr[i-1];
+					arr[i-1] = temp;
+				}
+				// increment the count so while loop can run again or stop
+				x++;
+			}
+
+			console.log(arr);
+		}
+
+		// test cases
+		var arr = [2, 4, 6, 8, 10];
+		var shiftby = 1;
+
+		// invoke function
+		rotateArr(arr, shiftby);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
