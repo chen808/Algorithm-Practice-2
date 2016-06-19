@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Binary Search</title>
+
+
+	<script type="text/javascript">
+	
+		function binarySearch(arr, val){
+			// check to see if incoming
+			// array isn't empty
+			if(arr.length <= 0){
+				console.log("Array is empty");
+			}
+
+			var midpt = Math.floor(arr.length/2);
+			console.log(midpt);
+
+			// this is to check if array only has
+			// one value left, immediately stop
+			if(arr.length <= 1) {
+				console.log("Not found");
+				return false;
+			}
+
+			// if the array midpoint is the val, found it
+			if(val === arr[midpt]){
+				console.log("Found it!");
+			}
+			// ... if less then midpoint, delete right half
+			else if (val < arr[midpt]) {
+				arr.splice(midpt, arr.length-1);
+				console.log(arr);
+				binarySearch(arr, val);
+			}
+			// ... if greater then midpoint, delete left half
+			else if (val > arr[midpt]) {
+				arr.splice(0, midpt);
+				console.log(arr);
+				binarySearch(arr, val);
+			}
+			// ... else did not find
+			else {
+				console.log("Did not find!");
+			}
+		}
+
+		// invoke binarySearch
+		var arr = [2,4,6,8,10,12,14,16,18];
+		var val = 18;
+		binarySearch(arr, val);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

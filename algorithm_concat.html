@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Concatenation</title>
+
+	<script type="text/javascript">
+	
+		function concat(arr1, arr2){
+
+			// check to see if incoming
+			// array isn't empty
+			if(arr1.length <= 0 || arr2.length <= 0){
+				console.log("Array is empty");
+				return false;
+			}
+
+			// variables
+			var newArr = [];
+			var arr1Count = arr1.length-1;
+			var arr2Count = arr2.length-1;
+			var maxLength;
+
+			
+			// check to see which of the array has longest length
+			// then assign to maxLength
+			if(arr1Count > arr2Count) {
+				maxLength = arr1Count;
+			}
+			else if(arr1Count < arr2Count) {
+				maxLength = arr2Count;
+			}
+			else {
+				maxLength = arr1Count;
+			}
+
+			// run a if check for both array's length. if 'i'
+			// is less then each array's length, keep pushing to new array.
+			for(var i=0; i<=maxLength; i++) {
+
+				if(i <= arr1Count) {
+					newArr.push(arr1[i]);
+				}
+
+				if(i <= arr2Count) {
+					newArr.push(arr2[i]);
+				}
+			}
+
+			console.log(newArr);
+		}
+
+		// invoke reverseArr
+		var arr1 = [1,3,5,7,9];
+		var arr2 = [2,4,6];
+		concat(arr1, arr2);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

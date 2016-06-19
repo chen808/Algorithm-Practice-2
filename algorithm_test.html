@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Binary Search</title>
+
+
+	<script type="text/javascript">
+	
+		function binarySearch(arr, val){
+			// check to see if incoming
+			// array isn't empty
+			if(arr.length <= 0){
+				console.log("Array is empty");
+			}
+
+			var midpt = Math.floor(arr.length/2);
+
+			if(val === midpt){
+				console.log("Found it!");
+			}
+			else if (val < arr[midpt]) {
+				arr.splice(arr[midpt], arr[arr.length-1]);
+				console.log(arr);
+				binarySearch(arr, val);
+			}
+			else if (val > arr[midpt]) {
+				arr.splice(arr[0], arr[midpt]);
+				console.log(arr);
+				binarySearch(arr, val);
+			}
+			else {
+				console.log("Did not find!");
+			}
+		}
+
+		// invoke binarySearch
+		var arr = [2,4,6,8,10,12,14,16,18];
+		var val = 8;
+		binarySearch(arr, val);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
