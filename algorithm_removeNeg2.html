@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Remove Negative (keeping order in place)</title>
+
+
+	<script type="text/javascript">
+	
+	function removeNeg(arr){
+		// check to see if incoming
+		// array isn't empty
+		if(arr.length <= 0){
+			console.log("Array is empty");
+		}
+		// if last index value is a negative num, delete it right away
+		if(arr[arr.length-1] < 0){
+			arr.pop();
+		}
+
+		// traverse through array
+		for(var index=0; index <= arr.length-1; index++) {
+			// if the current index value is negative, send it to back of array
+			if(arr[index] < 0) {
+				// extract the current index value
+				var temp = arr[index];
+				// shift index values over from right to left
+				for(var i=index; i<arr.length-1; i++) {
+					arr[i] = arr[i+1];
+				}
+				// place the temp value to last place of array
+				arr[arr.length-1] = temp;
+				// recusively send new arr thorugh function again
+				removeNeg(arr);
+			}
+		}
+
+		console.log(arr);
+
+	} // removeNeg
+
+	// invoke removeNeg
+	var arr = [2, -4, -6, 8, 10, -12, 14, 16, -20, -22];
+	removeNeg(arr);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
