@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Remove Range</title>
+
+
+	<script type="text/javascript">
+	
+		function removeRange(arr, start, end){
+			// check to see if incoming
+			// array isn't empty
+			if(arr.length <= 0){
+				console.log("Array is empty");
+				return false;
+			}
+			// check if start isn't less then 0
+			if(start < 0) {
+				console.log("Start needs to be 0 or higher");
+				return false;
+			}
+			// check if end isn't out of array's range
+			if(end > arr.length-1) {
+				console.log("End needs to be less then " + arr.length-1);
+			}
+			// figure out the range so we can give the while loop a breakpoint
+			var range = (end-start) + 1;
+			// initialize x to 0
+			var x = 0;
+			// run this while loop 'range' times
+			while(x<range) {
+				// for loop from arr[start] to 
+				for(var i=start; i<arr.length-1; i++) {
+					var temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+				}
+				// delete the last index value
+				arr.pop();
+				// increment x to keep while loop going
+				x++;
+			}
+
+			console.log(arr);
+
+		}
+
+		// invoke reverseArr
+		var arr = [20,30,40,50,60,70,80];
+		var start = 0;
+		var end = 4;
+		removeRange(arr, start, end);
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
