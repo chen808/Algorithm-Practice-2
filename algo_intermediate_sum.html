@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>Algorithm: Intermediate Sum</title>
+
+
+		<script type="text/javascript">
+		
+			function intermediateSum(arr){
+
+				// check to see if incoming array isn't empty
+                if(arr.length <= 0){
+                    console.log("Array is empty");
+                }
+                // initialize sum to zero
+                var sum = 0;
+                // for loop from 0 index up to array's length (make sure that last index is empty)
+                for(var i=0; i<arr.length; i++) {
+                	// if the 'i' is divisible by 10, add that value, then start
+                	// from the arr.length spot (which is empty) and shift left to right
+                    if(i%10 == 0) {
+                        sum+=arr[i];
+                        for(var x=arr.length; x>=i; x--) {
+                            arr[x] = arr[x-1];
+                        }
+                        // add the sum (up to this point) to arr[i] spot
+                        arr[i] = sum;
+                        // reset sum to 0
+                        sum = 0;
+                    }
+                    else {
+                    	// add current index value to sum
+                        sum+=arr[i];
+                    }
+                    
+                }
+                // grab the last sum count and place it at very end of array
+                arr[arr.length] = sum;
+
+
+                console.log(arr);
+
+			}
+
+			// invoke reverseArr
+			var arr = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,];
+			intermediateSum(arr);
+
+
+		</script>
+
+
+
+</head>
+<body>
+</body>
+</html>
